@@ -21,3 +21,11 @@ titanic <- titanic %>%
     class_sex = paste(Pclass, Sex, sep = "-")
   )
 ```
+
+```{r}
+titanic <- read_csv("data/titanic.csv", show_col_types = FALSE) |>
+  mutate(class_sex = paste(Pclass, Sex, sep = "-"))
+titanic
+```
+
+

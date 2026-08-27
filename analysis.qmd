@@ -6,4 +6,18 @@ execute:
   echo: false
 ---
 
+```{r}
+#| message: false
 
+library(tidymodels)
+library(tidyverse)
+library(broom)
+library(ordered)
+
+titanic <- read_csv("data/titanic.csv")
+
+titanic <- titanic %>%
+  mutate(
+    class_sex = paste(Pclass, Sex, sep = "-")
+  )
+```

@@ -1,0 +1,9 @@
+---
+title: "Tidymodels"
+author: "Shrish Tariq"
+format: html
+execute: 
+  echo: false
+---
+
+

@@ -42,9 +42,24 @@ tidy(mod_linear)
 ```
 
 ```{r}
+#| results: asis
+
+
+build_equation <- function(coefs, outcome) {
+  has_intercept <- "(Intercept)" %in% coefs$term
+  other <- coefs[coefs$term != "(Intercept)", ]
+  parts <- purrr::map2_chr(other$term, round(other$estimate, 2), function(term, est) {
+    sign <- if (est >= 0) "+" else "-"
+    paste0(sign, " ", abs(est), " \\times \\text{", term, "}")
+  })
+  lead <- if (has_intercept) as.character(round(coefs$estimate[coefs$term == "(Intercept)"], 2)) else NULL
+  rhs <- paste(c(lead, parts), collapse = " ")
+  paste0("$$\\text{", outcome, "} = ", rhs, "$$")
+}
 mod_linear_glm <- linear_reg() |>
   set_engine("glm") |>
   fit(Age ~ Pclass + Sex, data = titanic)
 
-print(tidy(mod_linear))
+cat(build_equation(tidy(mod_linear), "Age"))
+cat(build_equation(tidy(mod_linear_glm), "Age (glm)"))
 ```

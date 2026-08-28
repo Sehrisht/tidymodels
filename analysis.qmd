@@ -28,5 +28,11 @@ titanic <- read_csv("data/titanic.csv", show_col_types = FALSE) |>
 titanic
 ```
 
+```{r}
+linear_reg() |> set_engine("lm")
+```
 
-
+```{r}
+mod_linear <- linear_reg() |> set_engine("lm") |> fit (Age ~ Pclass + Sex, data = titanic)
+mod_linear
+```

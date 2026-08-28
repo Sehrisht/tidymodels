@@ -153,6 +153,24 @@ Coefficients:
 </div>
 <p><span class="math display">\[\text{Age} = 41.99 - 6.81 \times \text{Pclass} + 4.65 \times \text{Sexmale}\]</span><span class="math display">\[\text{Age (glm)} = 41.99 - 6.81 \times \text{Pclass} + 4.65 \times \text{Sexmale}\]</span></p>
 <p><span class="math display">\[\text{logit(P(Survived))} = 5.06 - 0.04 \times \text{Age} - 1.29 \times \text{Pclass} - 2.52 \times \text{Sexmale}\]</span></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>parsnip model object
+
+
+Call:  stats::glm(formula = factor(Survived, levels = c(0, 1)) ~ Age + 
+    Pclass + Sex, family = stats::binomial, data = data)
+
+Coefficients:
+(Intercept)          Age       Pclass      Sexmale  
+    5.05601     -0.03693     -1.28855     -2.52213  
+
+Degrees of Freedom: 713 Total (i.e. Null);  710 Residual
+  (177 observations deleted due to missingness)
+Null Deviance:      964.5 
+Residual Deviance: 647.3    AIC: 655.3</code></pre>
+</div>
+</div>
 
 </main>
 <!-- /main column -->

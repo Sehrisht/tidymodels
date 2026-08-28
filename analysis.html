@@ -92,6 +92,36 @@ ul.task-list li input[type="checkbox"] {
 # ℹ 2 more variables: Embarked &lt;chr&gt;, class_sex &lt;chr&gt;</code></pre>
 </div>
 </div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear Regression Model Specification (regression)
+
+Computational engine: lm </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>parsnip model object
+
+
+Call:
+stats::lm(formula = Age ~ Pclass + Sex, data = data)
+
+Coefficients:
+(Intercept)       Pclass      Sexmale  
+     41.988       -6.814        4.654  </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term        estimate std.error statistic   p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)    42.0      1.49      28.1  1.95e-117
+2 Pclass         -6.81     0.603    -11.3  2.44e- 27
+3 Sexmale         4.65     1.05       4.44 1.06e-  5</code></pre>
+</div>
+</div>
 
 </main>
 <!-- /main column -->

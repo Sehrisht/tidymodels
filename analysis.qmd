@@ -36,3 +36,15 @@ linear_reg() |> set_engine("lm")
 mod_linear <- linear_reg() |> set_engine("lm") |> fit (Age ~ Pclass + Sex, data = titanic)
 mod_linear
 ```
+
+```{r}
+tidy(mod_linear)
+```
+
+```{r}
+mod_linear_glm <- linear_reg() |>
+  set_engine("glm") |>
+  fit(Age ~ Pclass + Sex, data = titanic)
+
+print(tidy(mod_linear))
+```

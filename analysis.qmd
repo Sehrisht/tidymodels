@@ -82,3 +82,15 @@ mod_logistic
 ```
 Multinomial Regression 
 
+```{r}
+count(titanic, class_sex, sort = TRUE)
+```
+
+```{r}
+mod_multinomial <- multinom_reg() |> set_engine("nnet") |> fit(factor(class_sex) ~ Age + Survived, data = titanic)
+mod_multinomial
+```
+
+```{r}
+tidy(mod_multinomial)
+```

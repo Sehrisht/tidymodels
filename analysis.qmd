@@ -97,4 +97,18 @@ mod_multinomial_coefs <- tidy(mod_multinomial) |> filter(y.level == "3rd-male")
 cat(build_equation(mod_multinomial_coefs, "log-odds(3rd-male vs. 1st-female)"))
 ```
 
+```{r}
+count(titanic, Pclass)
+```
+
+```{r}
+#| results: asis
+mod_ordered <- ordinal_reg() |>
+  set_engine("polr", Hess = TRUE) |>
+  fit(factor(Pclass, levels = c("1", "2", "3"), ordered = TRUE) ~ Age + Sex + Survived, data = titanic)
+
+mod_ordered_coefs <- tidy(mod_ordered) |> filter(coef.type == "coefficient")
+cat(build_equation(mod_ordered_coefs, "Score"))
+```
+
 

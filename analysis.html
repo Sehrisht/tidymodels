@@ -189,6 +189,17 @@ Residual Deviance: 647.3    AIC: 655.3</code></pre>
 <p>Call: nnet::multinom(formula = factor(class_sex) ~ Age + Survived, data = data, trace = FALSE)</p>
 <p>Coefficients: (Intercept) Age Survived 1-male 2.506392 0.01174539 -3.640886 2-female 1.974270 -0.03363775 -1.110551 2-male 5.147246 -0.04975463 -5.363319 3-female 5.977009 -0.09422793 -4.089427 3-male 6.864616 -0.07607969 -5.542230</p>
 <p>Residual Deviance: 1938.33 AIC: 1968.33 <span class="math display">\[\text{log-odds(3rd-male vs. 1st-female)} = \]</span></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  Pclass     n
+   &lt;dbl&gt; &lt;int&gt;
+1      1   216
+2      2   184
+3      3   491</code></pre>
+</div>
+</div>
+<p><span class="math display">\[\text{Score} = - 0.06 \times \text{Age} - 0.32 \times \text{Sexmale} - 1.97 \times \text{Survived}\]</span></p>
 
 </main>
 <!-- /main column -->

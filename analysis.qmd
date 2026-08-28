@@ -87,10 +87,14 @@ count(titanic, class_sex, sort = TRUE)
 ```
 
 ```{r}
-mod_multinomial <- multinom_reg() |> set_engine("nnet") |> fit(factor(class_sex) ~ Age + Survived, data = titanic)
+#| results: asis
+mod_multinomial <- multinom_reg() |>
+  set_engine("nnet") |>
+  fit(factor(class_sex) ~ Age + Survived, data = titanic)
+
 mod_multinomial
+mod_multinomial_coefs <- tidy(mod_multinomial) |> filter(y.level == "3rd-male")
+cat(build_equation(mod_multinomial_coefs, "log-odds(3rd-male vs. 1st-female)"))
 ```
 
-```{r}
-tidy(mod_multinomial)
-```
+

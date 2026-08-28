@@ -185,48 +185,10 @@ Residual Deviance: 647.3    AIC: 655.3</code></pre>
 6 2-female     76</code></pre>
 </div>
 </div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>parsnip model object
-
-Call:
-nnet::multinom(formula = factor(class_sex) ~ Age + Survived, 
-    data = data, trace = FALSE)
-
-Coefficients:
-         (Intercept)         Age  Survived
-1-male      2.506392  0.01174539 -3.640886
-2-female    1.974270 -0.03363775 -1.110551
-2-male      5.147246 -0.04975463 -5.363319
-3-female    5.977009 -0.09422793 -4.089427
-3-male      6.864616 -0.07607969 -5.542230
-
-Residual Deviance: 1938.33 
-AIC: 1968.33 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 15 × 6
-   y.level  term        estimate std.error statistic  p.value
-   &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
- 1 1-male   (Intercept)   2.51      0.770       3.25 1.14e- 3
- 2 1-male   Age           0.0117    0.0117      1.01 3.14e- 1
- 3 1-male   Survived     -3.64      0.627      -5.81 6.38e- 9
- 4 2-female (Intercept)   1.97      0.846       2.33 1.97e- 2
- 5 2-female Age          -0.0336    0.0121     -2.79 5.27e- 3
- 6 2-female Survived     -1.11      0.733      -1.51 1.30e- 1
- 7 2-male   (Intercept)   5.15      0.777       6.63 3.45e-11
- 8 2-male   Age          -0.0498    0.0131     -3.81 1.39e- 4
- 9 2-male   Survived     -5.36      0.667      -8.05 8.52e-16
-10 3-female (Intercept)   5.98      0.764       7.82 5.09e-15
-11 3-female Age          -0.0942    0.0132     -7.13 1.01e-12
-12 3-female Survived     -4.09      0.645      -6.34 2.25e-10
-13 3-male   (Intercept)   6.86      0.751       9.14 6.33e-20
-14 3-male   Age          -0.0761    0.0120     -6.34 2.32e-10
-15 3-male   Survived     -5.54      0.635      -8.72 2.70e-18</code></pre>
-</div>
-</div>
+<p>parsnip model object</p>
+<p>Call: nnet::multinom(formula = factor(class_sex) ~ Age + Survived, data = data, trace = FALSE)</p>
+<p>Coefficients: (Intercept) Age Survived 1-male 2.506392 0.01174539 -3.640886 2-female 1.974270 -0.03363775 -1.110551 2-male 5.147246 -0.04975463 -5.363319 3-female 5.977009 -0.09422793 -4.089427 3-male 6.864616 -0.07607969 -5.542230</p>
+<p>Residual Deviance: 1938.33 AIC: 1968.33 <span class="math display">\[\text{log-odds(3rd-male vs. 1st-female)} = \]</span></p>
 
 </main>
 <!-- /main column -->
